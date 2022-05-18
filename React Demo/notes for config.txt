@@ -37,7 +37,7 @@
 
 components returns jsx
 
-
+11.give npm start
 
 
 
