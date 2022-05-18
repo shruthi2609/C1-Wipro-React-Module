@@ -1,0 +1,43 @@
+1.cra - create-react-app
+2.manually config dependency .
+
+
+
+1.npm init 
+
+
+2.npm install -D @babel/cli @babel/core @babel/plugin-transform-runtime @babel/preset-env @babel/preset-react @babel/runtime babel-eslint babel-loader webpack webpack-cli webpack-dev-server
+
+3. npm install react react-dom
+
+
+4.webpack.config.js
+
+5. .babelrc
+
+6.public 
+
+
+7.src
+
+
+8. change package.json  
+ "main": "./src/index.js",
+
+9."scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server .",
+    "build": "Webpack ."
+  }
+
+
+1.classes
+2.functions
+
+
+components returns jsx
+
+
+
+
+
