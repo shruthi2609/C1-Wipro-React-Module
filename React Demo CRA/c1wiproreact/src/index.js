@@ -1,28 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import TodoComponent from './components/TodoComponent';
+import CounterComponent from "./components/CounterComponent"
 const data=[
   {
-    fname:"john",
-    arrears:false,
-    email:"john@gmail.com"
-  },
-  {
-    fname:"john",
-    arrears:false,
-    email:"john@gmail.com"
-  },
-  {
-    fname:"john",
-    arrears:false,
-    email:"john@gmail.com"
+      title:"react",
+      text:"solve react problems"
   }
 ]
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+  <div>
+<TodoComponent></TodoComponent>
 
-    <App studentdata={data}/>
- 
+</div>
+  
 );
 
 
