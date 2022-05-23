@@ -34,29 +34,59 @@ class TodoComponent extends React.Component{
     constructor(props){
         super(props)
         this.state={
-           data:[]
+           data:[],
+           currenttitle:"",
+           currentText:"",
+           id:0
         }
     }
+    setId=()=>{
+        this.setState({id:this.state.id+1})
+    }
    addItem=()=>{
+    // this.setId()
+    this.setState({id:this.state.id+1})
        this.setState({data:[...this.state.data,{
-        title:"css",
-        text:"solve css problems" 
+        id:this.state.id,
+        title:this.state.currenttitle,
+        text:this.state.currentText,
+        compeleted:false
        }]})
+   }
+   handleTitle=(ev)=>{
+  
+    this.setState({currenttitle:ev.target.value})
+    
+   }
+   handleText=(ev)=>{
+   
+    this.setState({currentText:ev.target.value})
+   }
+   changeCompletion=(itemid)=>{
+   const temp=[...this.state.data]
+   const obj=temp.find((item)=>item.id===itemid)
+   obj.compeleted=!obj.compeleted
+   this.setState({data:temp})
+   
    }
     render(){
         console.log(this.state.data)
         return(
           
             <div>
+               Title: <input type='text' onChange={(e)=>this.handleTitle(e)}></input>
+               Text: <input type='text' onChange={(e)=>this.handleText(e)}></input>
                   <button onClick={this.addItem}> add item</button>
-              {
+                  {
                  this.state.data.map((item)=>(
-                     <div>
-                         <h2>{item.title}</h2>
-                         <p>{item.text}</p>
-                         </div>
+                        item.compeleted?<></>:<div>
+                        <h2>{item.title}</h2>
+                        <p>{item.text}</p>
+                        <button onClick={()=>this.changeCompletion(item.id)}>done</button>
+                        </div>  
                  )) 
               }
+              <CompletedItems data={this.state.data}></CompletedItems>
             </div>
         )
     }
