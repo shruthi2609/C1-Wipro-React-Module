@@ -1,0 +1,52 @@
+import React,{ChangeEvent, FC,useState} from "react"
+import ITodo from "./Interfaces"
+const App:FC=()=>{
+const [id,setId]=useState<number>(0)
+const [todoText,settodoText]=useState<string>("")
+const [todoData,settodoData]=useState<ITodo[]>([])
+
+const handleChange=(e:ChangeEvent<HTMLInputElement>):void=>{
+  settodoText(e.target.value)
+}
+const addItem=():void=>{
+  const obj={id:id,todoText:todoText}
+  settodoData([...todoData,obj])
+  console.log(todoData)
+  setId(id+1)
+}
+const deleteItem=(itemid:number):void=>{
+  const temp=[...todoData]
+  const result=temp.filter((item)=>item.id!==itemid)
+  settodoData(result)
+}
+return(
+  <div>
+  <div>
+    TodoText:<input type='text' onChange={(e)=>handleChange(e)}></input>
+    <button onClick={addItem}>add task</button>
+    </div>
+      <div>
+    {todoData.map((item:ITodo)=>(
+        <div>
+          <h2>{item.todoText}</h2>
+          <button onClick={()=>deleteItem(item.id)}>delete</button>
+          </div>
+    ))
+    }
+    </div>
+    </div>
+)
+}
+export default App
+
+
+
+
+
+interfaces.ts
+
+
+export default interface ITodo{
+    id:number,
+    todoText:string
+}
