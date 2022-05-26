@@ -5,7 +5,7 @@
     const [todotext,setTodoText]=useState("")
     const [data,setData]=useState([])
 
-    addTodo=()=>{
+    const addTodo=()=>{
         const obj={id:id,todotext:todotext}
         setData([...data,obj])
     }

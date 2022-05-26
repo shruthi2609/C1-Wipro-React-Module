@@ -7,8 +7,7 @@ import FunctionalComponent from "./components/FunctionalComponent"
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-<FunctionalComponent prop1="UseState eg"></FunctionalComponent>
-
+<App></App>
 </div>
   
 );
