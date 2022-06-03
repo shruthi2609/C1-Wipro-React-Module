@@ -1,4 +1,4 @@
-import SignUpComponent from "./components/SPA Components/SignUpComponent"
+/*import SignUpComponent from "./components/SPA Components/SignUpComponent"
 import {BrowserRouter,Link,Routes,Route} from "react-router-dom"
 import DashBoard from "./components/SPA Components/DashBoard"
 import HomePage from "./components/SPA Components/HomePage"
@@ -33,6 +33,8 @@ export default function App(){
   )
 }*/
 
+import FunctionCompo from "./components/Network Calls/SimpleNetworkCallFunctions";
+
 /*import {BrowserRouter,Link,Routes,Route} from "react-router-dom"
 import { Home,AdminPage,ContactPage} from "./components/Protected Routes/AllComponents"
 import Navigation from "./components/Protected Routes/AllComponents"
@@ -56,6 +58,11 @@ export default function App(){
     </>
   )
 }*/
+export default function App(){
+  return(
+    <FunctionCompo></FunctionCompo>
+  )
+}
 
 
 
