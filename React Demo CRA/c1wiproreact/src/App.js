@@ -58,11 +58,26 @@ export default function App(){
     </>
   )
 }*/
+import {BrowserRouter,Link,Routes,Route} from "react-router-dom"
+import HomePage from "./components/ContactManager/HomePage";
+import CreateUser from "./components/ContactManager/CreateUser";
+import DeleteUser from "./components/ContactManager/DeleteUser";
 export default function App(){
   return(
-    <FunctionCompo></FunctionCompo>
+    <div>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage></HomePage>}> </Route>
+        <Route path="/create" element={<CreateUser></CreateUser>}> </Route>
+        <Route path="/delete/:userid" element={<DeleteUser></DeleteUser>}> </Route>
+
+      </Routes>
+      </BrowserRouter>
+    </div>
   )
 }
+
+
 
 
 
