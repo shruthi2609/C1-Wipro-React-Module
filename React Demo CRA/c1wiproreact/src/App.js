@@ -62,14 +62,19 @@ import {BrowserRouter,Link,Routes,Route} from "react-router-dom"
 import HomePage from "./components/ContactManager/HomePage";
 import CreateUser from "./components/ContactManager/CreateUser";
 import DeleteUser from "./components/ContactManager/DeleteUser";
+import SignInComponentInt from "./components/IntegrationOne/SignInComponentInt";
+import DashBoard from "./components/IntegrationOne/DashBoardInt";
 export default function App(){
   return(
     <div>
       <BrowserRouter>
+      <nav>
+      <Link to='/signup'>register user</Link>
+      </nav>
       <Routes>
-        <Route path="/" element={<HomePage></HomePage>}> </Route>
-        <Route path="/create" element={<CreateUser></CreateUser>}> </Route>
-        <Route path="/delete/:userid" element={<DeleteUser></DeleteUser>}> </Route>
+        <Route path="/" element={<SignInComponentInt></SignInComponentInt>}> </Route>
+        <Route path="/dashboard/:email" element={<DashBoard></DashBoard>}> </Route>
+        
 
       </Routes>
       </BrowserRouter>
