@@ -64,6 +64,7 @@ import CreateUser from "./components/ContactManager/CreateUser";
 import DeleteUser from "./components/ContactManager/DeleteUser";
 import SignInComponentInt from "./components/IntegrationOne/SignInComponentInt";
 import DashBoard from "./components/IntegrationOne/DashBoardInt";
+import UpdatePassword from "./components/IntegrationOne/UpdatePassword";
 export default function App(){
   return(
     <div>
@@ -74,6 +75,7 @@ export default function App(){
       <Routes>
         <Route path="/" element={<SignInComponentInt></SignInComponentInt>}> </Route>
         <Route path="/dashboard/:email" element={<DashBoard></DashBoard>}> </Route>
+        <Route path="/updatepassword" element={<UpdatePassword></UpdatePassword>}> </Route>
         
 
       </Routes>
